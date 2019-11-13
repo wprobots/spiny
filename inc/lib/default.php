@@ -7,7 +7,7 @@
  * @package spiny
  */
 
-if ( ! function_exists( 'wp_robots_setup' ) ) :
+if ( ! function_exists( 'spiny_setup' ) ) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
      *
@@ -15,7 +15,7 @@ if ( ! function_exists( 'wp_robots_setup' ) ) :
      * runs before the init hook. The init hook is too late for some features, such
      * as indicating support for post thumbnails.
      */
-    function wp_robots_setup() {
+    function spiny_setup() {
         /*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
@@ -63,7 +63,7 @@ if ( ! function_exists( 'wp_robots_setup' ) ) :
         ) );
 
         // Set up the WordPress core custom background feature.
-        add_theme_support( 'custom-background', apply_filters( 'wp_robots_custom_background_args', array(
+        add_theme_support( 'custom-background', apply_filters( 'spiny_custom_background_args', array(
             'default-color' => 'ffffff',
             'default-image' => '',
         ) ) );
@@ -84,7 +84,7 @@ if ( ! function_exists( 'wp_robots_setup' ) ) :
         ) );
     }
 endif;
-add_action( 'after_setup_theme', 'wp_robots_setup' );
+add_action( 'after_setup_theme', 'spiny_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -93,20 +93,20 @@ add_action( 'after_setup_theme', 'wp_robots_setup' );
  *
  * @global int $content_width
  */
-function wp_robots_content_width() {
+function spiny_content_width() {
     // This variable is intended to be overruled from themes.
     // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
     // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-    $GLOBALS['content_width'] = apply_filters( 'wp_robots_content_width', 640 );
+    $GLOBALS['content_width'] = apply_filters( 'spiny_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'wp_robots_content_width', 0 );
+add_action( 'after_setup_theme', 'spiny_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function wp_robots_widgets_init() {
+function spiny_widgets_init() {
     register_sidebar( array(
         'name'          => esc_html__( 'Sidebar', 'spiny' ),
         'id'            => 'spiny-sidebar',
@@ -117,7 +117,7 @@ function wp_robots_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 }
-add_action( 'widgets_init', 'wp_robots_widgets_init' );
+add_action( 'widgets_init', 'spiny_widgets_init' );
 
 
 

@@ -2,15 +2,18 @@
 <html>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://fonts.googleapis.com/css?family=Jura:400,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <?php wp_head(); ?>
-
+    <?php
+    if( get_option( 'tracking_code_header' ) ) {
+        echo stripslashes_deep( get_option( 'tracking_code_header' ) );
+    }
+    ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
 <?php
 /* GLOBAL SETTINGS FIELDS */
 $wrs_site_header_logo = get_field('wrs_site_header_logo', 'options');

@@ -1,7 +1,5 @@
 <?php
 
-include_once( __DIR__ . '/inc/vendor/simple_html_dom.php' );
-
 include_once( __DIR__ . '/inc/lib/utils.php' );
 
 include_once( __DIR__ . '/inc/lib/default.php' );
