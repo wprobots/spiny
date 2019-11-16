@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package wp-robots
+ * @package spiny
  */
 
 get_header();
@@ -17,14 +17,11 @@ while ( have_posts() ) :
     <div class="reducer">
         <div class="w960">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--12-col">
-                    <?php echo breadcrumbs(); ?>
-                </div>
 
                 <?php
                 $post_view     = (int)get_post_meta( $post->ID, 'post_total_view', true );
                 $post_view_new = $post_view + 1;
-                update_post_meta( $post->ID, 'post_total_view', $post_view_new );
+                //update_post_meta( $post->ID, 'post_total_view', $post_view_new );
                 ?>
                 <div class="mdl-cell mdl-cell--12-col">
                     <article>

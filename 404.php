@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package wp-robots
+ * @package spiny
  */
 
 get_header();
@@ -14,7 +14,7 @@ get_header();
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col tac">
                 <h1>Страница не найдена</h1>
-                <p>Перейти на <a href="<?php echo get_permalink(2); ?>">главную</a>.</p>
+                <p>Перейти на <a href="<?php echo esc_url( home_url( '/' ) ); ?>">главную</a>.</p>
             </div>
         </div>
     </div>

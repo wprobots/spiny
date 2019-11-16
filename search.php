@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package wp-robots
+ * @package spiny
  */
 
 get_header();
@@ -19,12 +19,11 @@ $frontpage_id = get_option( 'page_on_front' );
     <div class="reducer">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
-                <?php echo breadcrumbs(); ?>
 
                 <h1 class="page-title">
                     <?php
                     /* translators: %s: search query. */
-                    printf( 'Результати пошуку для "%s"', get_search_query() );
+                    printf( 'Результаты поиска для "%s"', get_search_query() );
                     ?>
                 </h1>
 

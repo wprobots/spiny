@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package wp-robots
+ * @package spiny
  */
 
 get_header();
@@ -19,7 +19,6 @@ $frontpage_id = get_option( 'page_on_front' );
 <div class="reducer">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
-            <?php echo breadcrumbs(); ?>
 
             <?php
             if( is_category() || is_tag() || is_tax() ) {
@@ -41,7 +40,7 @@ $frontpage_id = get_option( 'page_on_front' );
                 ?>
                 <h1><?php echo $current->label ?></h1>
                 <?php
-                if( is_post_type_archive( array('job', 'event', 'service', 'human') ) ) {
+                if( is_post_type_archive() ) {
 
                     $post_type_description = cpt_description($wp_query->query['post_type']);
                     if( ! empty($post_type_description) ) {
@@ -56,42 +55,10 @@ $frontpage_id = get_option( 'page_on_front' );
                 $author = get_user_by( 'slug', get_query_var( 'author_name' ) );
                 $author_meta = get_user_meta($author->ID);
 
-                $wrs_user_profile_picture = get_field('wrs_user_profile_picture', $author);
-                $wrs_user_position = get_field('wrs_user_position', $author);
+                ?>
+                <h1><?php echo $current->data->display_name ?></h1>
+                <?php
 
-                if( $wrs_user_profile_picture ) {
-
-                    ?>
-                    <div class="ovh">
-                        <div class="fll">
-                            <div class="df df_vac">
-                                <div class="cell mr10">
-                                    <img src="<?php echo $wrs_user_profile_picture['url']; ?>" alt="" style="height: 100px; -webkit-border-radius: 100%;-moz-border-radius: 100%;border-radius: 100%;">
-                                </div>
-                                <div class="cell">
-                                    <h1 class="mb5"><?php echo $current->data->display_name ?></h1>
-                                    <?php echo $wrs_user_position ?>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <?php
-                }
-                else {
-                    if( $wrs_user_position ) {
-                        ?>
-                        <h1 class="mb5"><?php echo $current->data->display_name ?></h1>
-                        <?php echo $wrs_user_position ?>
-                        <?php
-                    }
-                    else {
-                        ?>
-                        <h1><?php echo $current->data->display_name ?></h1>
-                        <?php
-                    }
-                }
                 if( ! empty($author_meta['description'][0]) ) {
                     ?>
                     <div class="half_width mt10">

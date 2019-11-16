@@ -1,8 +1,8 @@
 /*!
 Theme Name: spiny
-Theme URI: https://wp-robots.org/
-Author: wp-robots
-Author URI: https://wp-robots.org/
+Theme URI: https://spiny.org/
+Author: spiny
+Author URI: https://spiny.org/
 Description: Fastest free wordpress theme in the world
 Version: 1.0.0
 License: Apache-2
@@ -10,7 +10,7 @@ License URI: LICENSE
 Text Domain: spiny
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, free theme
 
-Copyright 2019 wp-robots
+Copyright 2019 spiny
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -24,3 +24,213 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Poppins:400');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: #333333;
+}
+
+.layout {
+    position: relative;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.reducer {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page_header {
+    flex-shrink: 0;
+}
+.page_container {
+    flex: 1;
+    flex-shrink: 0;
+}
+.page_footer {
+    flex-shrink: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* SITE MAIN NAVIGATION */
+.spiny_main_nav {
+
+}
+.spiny_main_nav_list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0;
+}
+.spiny_main_nav_list li {
+    margin: 0 10px;
+    position: relative;
+}
+.spiny_main_nav_list .sub-menu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+.spiny_main_nav_list .sub-menu li {
+    margin: 0;
+    padding: 0;
+}
+.spiny_main_nav_list li:hover .sub-menu {
+    display: block;
+    list-style-type: none;
+}
+/* SITE MAIN NAVIGATION */
+
+
+/* GRID */
+.spiny_grid_container {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.spiny_grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.spiny_grid__col1 {
+    width: calc(25% - 20px);
+    margin: 0 10px;
+
+    border: 1px solid #000;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.spiny_grid__col2 {
+    width: calc(50% - 20px);
+    margin: 0 10px;
+    border: 1px solid #f00;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.spiny_grid__col3 {
+    width: calc(75% - 20px);
+    margin: 0 10px;
+    border: 1px solid #0f0;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.spiny_grid__col4 {
+    width: calc(100% - 20px);
+    margin: 0 10px;
+    border: 1px solid #00f;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.spiny_grid.vertical_center {
+    align-items: center;
+}
+/* GRID */
+
+
+/* TYPOGRAFY */
+html {font-size: 16px;}
+
+body {
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.45;
+    color: #333;
+}
+
+p {margin-bottom: 1.25em;}
+
+h1, h2, h3, h4, h5 {
+    margin: 2.75rem 0 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 3.052em;
+}
+
+h2 {font-size: 2.441em;}
+
+h3 {font-size: 1.953em;}
+
+h4 {font-size: 1.563em;}
+
+h5 {font-size: 1.25em;}
+
+small, .text_small {font-size: 0.8em;}
+
+ol,
+ul {
+    margin-left: 25px;
+}
+/* TYPOGRAFY */
+
+
+
+/* WP FIXES */
+figure {
+    max-width: 100% !important;
+}
+pre {
+    max-width: 100% !important;
+    white-space: pre-wrap;
+}
+/* WP FIXES */
+
+
+
+
+
+@media screen and (max-width: 479px) {
+
+    img {
+        max-width: 200%;
+        width: calc(100% + 40px) !important;
+        margin-left: -20px;
+    }
+}
+
+
+
+
+
+
+
