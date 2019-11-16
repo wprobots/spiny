@@ -28,7 +28,7 @@ function spiny_options_tabs( $current = 'general' ) {
     $tabs = array(
         'general' => __('Общие настройки', 'spiny'),
         'grid'    => __('Сетка сайта', 'spiny'),
-        'scripts'     => __('Подключение скриптов', 'spiny'),
+        'scripts' => __('Подключение скриптов', 'spiny'),
         'social'  => __('Соц. сети', 'spiny'),
     );
 
@@ -93,17 +93,17 @@ function spiny_options_save() {
             update_option( 'favicon_image_id', (int)$_POST['favicon_image_id'] );
             update_option( 'footer_copyright', $_POST['footer_copyright'] );
         }
-        elseif($tab == 'blog') {
-            $blog_grid = isset( $_POST['blog_grid'] ) && (int)$_POST['blog_grid'] > 0 ? (int)$_POST['blog_grid'] : 1;
-            $blog_sidebar = isset( $_POST['blog_sidebar'] ) && (int)$_POST['blog_sidebar'] > 0 ? (int)$_POST['blog_sidebar'] : 0;
+        elseif($tab == 'grid') {
+            $spiny_grid = isset( $_POST['spiny_grid'] ) && (int)$_POST['spiny_grid'] > 0 ? (int)$_POST['spiny_grid'] : 1;
+            $spiny_sidebar = isset( $_POST['spiny_sidebar'] ) && (int)$_POST['spiny_sidebar'] > 0 ? (int)$_POST['spiny_sidebar'] : 0;
             $related_posts = isset( $_POST['related_posts'] ) && (int)$_POST['related_posts'] > 0 ? (int)$_POST['related_posts'] : 0;
             $favorite_posts = isset( $_POST['favorite_posts'] ) && (int)$_POST['favorite_posts'] > 0 ? (int)$_POST['favorite_posts'] : 0;
-            update_option( 'blog_grid', $blog_grid );
-            update_option( 'blog_sidebar', $blog_sidebar );
+            update_option( 'spiny_grid', $spiny_grid );
+            update_option( 'spiny_sidebar', $spiny_sidebar );
             update_option( 'related_posts', $related_posts );
             update_option( 'favorite_posts', $favorite_posts );
         }
-        elseif($tab == 'seo') {
+        elseif($tab == 'scripts') {
             update_option( 'tracking_code_header', $_POST['tracking_code_header'] );
             update_option( 'tracking_code_footer', $_POST['tracking_code_footer'] );
         }
@@ -111,7 +111,7 @@ function spiny_options_save() {
             update_option( 'social_facebook', $_POST['social_facebook'] );
             update_option( 'social_twitter', $_POST['social_twitter'] );
             update_option( 'social_instagram', $_POST['social_instagram'] );
-            update_option( 'social_google_plus', $_POST['social_google_plus'] );
+            update_option( 'social_vkontakte', $_POST['social_vkontakte'] );
         }
     }
 }

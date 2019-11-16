@@ -101,22 +101,67 @@ function data_list( $post_term, $tax ) {
 }
 
 
-function get_empty_image() {
-    $wrs_site_thumbnail_blank = get_field('wrs_site_thumbnail_blank', 'options');
+function spiny_columns() {
+    $blog_grid = get_option( 'spiny_grid' );
 
-    $empty_img = '';
-    if( $wrs_site_thumbnail_blank ) {
-        $srcset = array();
-        $srcset[] = $wrs_site_thumbnail_blank['sizes']['thumbnail'] . ' ' . $wrs_site_thumbnail_blank['sizes']['thumbnail-width'] . 'w';
-        $srcset[] = $wrs_site_thumbnail_blank['sizes']['medium'] . ' ' . $wrs_site_thumbnail_blank['sizes']['medium-width'] . 'w';
-        $srcset[] = $wrs_site_thumbnail_blank['sizes']['medium_additional'] . ' ' . $wrs_site_thumbnail_blank['sizes']['medium_additional-width'] . 'w';
-
-        $empty_img = '<img src="' . $wrs_site_thumbnail_blank['sizes']['medium_additional'] . '" alt="" srcset="' . implode(',', $srcset) . '" sizes="(max-width: ' . $wrs_site_thumbnail_blank['sizes']['medium_additional-width'] . 'px) 100vw, ' . $wrs_site_thumbnail_blank['sizes']['medium_additional-width'] . 'px">';
+    $col = 2;
+    if( $blog_grid && (int)$blog_grid > 0 ) {
+        if( (int)$blog_grid === 1 ) {
+            $col = 6;
+        }
+        if( (int)$blog_grid === 2 ) {
+            $col = 4;
+        }
+        if( (int)$blog_grid === 3 ) {
+            $col = 3;
+        }
+        if( (int)$blog_grid === 4 ) {
+            $col = 2;
+        }
+        if( (int)$blog_grid === 5 ) {
+            $col = 1;
+        }
     }
 
-    return $empty_img;
+    return $col;
 }
 
 
+/**
+ * https://wp-kama.ru/question/funktsiya-skloneniya-slov-posle-chisel-php
+ * Склонение слова после числа.
+ *
+ * Примеры вызова:
+ * num_decline( $num, 'книга,книги,книг' )
+ * num_decline( $num, [ 'книга','книги','книг' ] )
+ * num_decline( $num, 'книга', 'книги', 'книг' )
+ * num_decline( $num, 'книга', 'книг' )
+ *
+ * @param  int|string    $number  Число после которого будет слово. Можно указать число в HTML тегах.
+ * @param  string|array  $titles  Варианты склонения или первое слово для кратного 1.
+ * @param  string        $param2  Второе слово, если не указано в параметре $titles.
+ * @param  string        $param3  Третье слово, если не указано в параметре $titles.
+ *
+ * @return string 1 книга, 2 книги, 10 книг.
+ *
+ * @version 2.0
+ */
+function num_decline( $number, $titles, $param2 = '', $param3 = '' ){
+
+    if( $param2 )
+        $titles = [ $titles, $param2, $param3 ];
+
+    if( is_string($titles) )
+        $titles = preg_split( '/, */', $titles );
+
+    if( empty($titles[2]) )
+        $titles[2] = $titles[1]; // когда указано 2 элемента
+
+    $cases = [ 2, 0, 1, 1, 1, 2 ];
+
+    $intnum = abs( intval( strip_tags( $number ) ) );
+
+    return "$number ". $titles[ ($intnum % 100 > 4 && $intnum % 100 < 20) ? 2 : $cases[min($intnum % 10, 5)] ];
+}
 
 

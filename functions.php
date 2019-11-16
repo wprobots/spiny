@@ -27,6 +27,13 @@ include_once( __DIR__ . '/inc/modules/module.php' );
 /* SITE MODULES */
 
 
+/* OUTER MODULES */
+
+include_once( __DIR__ . '/inc/outer_modules/kama_breadcrumbs.php' );
+
+/* OUTER MODULES */
+
+
 
 if( ! function_exists('get_field') ) {
     function get_field() {

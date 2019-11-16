@@ -63,35 +63,13 @@ jQuery(document).on('touch click', '.more span', function () {
     jQuery('.search_more').removeClass('hidden');
 });
 
-jQuery(document).on('touch click', '.mobile_menu', function () {
+jQuery(document).on('touch click', '.spiny_main_nav_mobile_btn', function () {
     jQuery('nav').addClass('open');
-    var $mobile_menu_container = jQuery('.mobile_menu_container');
-    $mobile_menu_container.css({
-        'left': '-100%'
-    });
-
-    $mobile_menu_container.animate({
-        'left': 0
-    },250);
-
-    jQuery('body').addClass('ovh');
+    jQuery('body').addClass('overflow_hidden');
 });
-jQuery(document).on('touch click', 'nav .mobile_menu_container', function (e) {
-    e.stopPropagation();
-});
-jQuery(document).on('touch click', 'nav .main_nav_container, nav .mobile_menu_close', function () {
-    var $mobile_menu_container = jQuery('.mobile_menu_container');
-    $mobile_menu_container.css({
-        'left': 0
-    });
-
-    $mobile_menu_container.animate({
-        'left': '-100%'
-    },250, function () {
-        jQuery('nav').removeClass('open');
-    });
-
-    jQuery('body').removeClass('ovh');
+jQuery(document).on('touch click', '.spiny_main_nav_mobile_close', function () {
+    jQuery('nav').removeClass('open');
+    jQuery('body').removeClass('overflow_hidden');
 });
 
 jQuery(document).on('click touch', function () {
@@ -153,6 +131,16 @@ jQuery(document).on('click touch','.interested_button', function () {
 });
 
 
+jQuery(document).on('click touch','.search_link', function () {
+    jQuery('.header_search_form').fadeIn(250);
+
+    return false;
+});
+jQuery(document).on('click touch','.search_close', function () {
+    jQuery('.header_search_form').fadeOut(250);
+
+    return false;
+});
 jQuery(document).on('click touch','.popup_bg', function () {
     return false;
 });
@@ -164,13 +152,13 @@ jQuery(document).on('click touch','.popup,.fade,.popup_close', function () {
 });
 
 jQuery(window).on('load', function () {
-    var show_popup = getCookie('popup_show');
-    if( ! show_popup || parseInt(show_popup) !== 1 ) {
-        jQuery('.popup').fadeIn(300);
-        jQuery('.fade').fadeIn(300);
-
-        setCookie('popup_show',1,10000);
-    }
+    // var show_popup = getCookie('popup_show');
+    // if( ! show_popup || parseInt(show_popup) !== 1 ) {
+    //     jQuery('.popup').fadeIn(300);
+    //     jQuery('.fade').fadeIn(300);
+    //
+    //     setCookie('popup_show',1,10000);
+    // }
 });
 
 

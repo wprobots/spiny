@@ -11,23 +11,21 @@ $option_action = admin_url( 'themes.php?page=theme-options&tab=general' );
                 <td class="fld">
                     <h4><?php _e('Grid', 'spiny'); ?></h4>
                     <?php
-                    $blog_grid = get_option( 'blog_grid' );
-                    $blog_checked_1 = (int)$blog_grid === 1 ? 'checked="checked"' : '';
-                    $blog_checked_2 = (int)$blog_grid === 2 ? 'checked="checked"' : '';
-                    $blog_checked_3 = (int)$blog_grid === 3 ? 'checked="checked"' : '';
+                    $spiny_grid = get_option( 'spiny_grid' );
+                    if(! $spiny_grid || (int)$spiny_grid < 1 ) {
+                        $spiny_grid = 4;
+                    }
+
+                    for( $i=0; $i<5; $i++ ) {
+                        $spiny_checked = (int)$spiny_grid === ($i+1) ? ' checked="checked"' : '';
+                        ?>
+                        <div class="radio_line">
+                            <input type="radio" name="spiny_grid" id="spiny_grid_<?php echo ($i+1); ?>" value="<?php echo ($i+1); ?>"<?php echo $spiny_checked;?> />
+                            <label for="spiny_grid_<?php echo ($i+1); ?>"><?php echo num_decline(($i+1), array('колонка', 'колонки', 'колонок')); ?></label>
+                        </div>
+                        <?php
+                    }
                     ?>
-                    <div class="radio_line">
-                        <input type="radio" name="blog_grid" id="blog_grid_1" value="1" <?php echo $blog_checked_1;?> />
-                        <label for="blog_grid_1">1 column</label>
-                    </div>
-                    <div class="radio_line">
-                        <input type="radio" name="blog_grid" id="blog_grid_2" value="2" <?php echo $blog_checked_2;?> />
-                        <label for="blog_grid_2">2 columns</label>
-                    </div>
-                    <div class="radio_line">
-                        <input type="radio" name="blog_grid" id="blog_grid_3" value="3" <?php echo $blog_checked_3;?> />
-                        <label for="blog_grid_3">3 columns</label>
-                    </div>
                 </td>
                 <td><?php _e('Select the grid of the blog', 'spiny'); ?></td>
             </tr>
@@ -35,11 +33,11 @@ $option_action = admin_url( 'themes.php?page=theme-options&tab=general' );
                 <td class="fld">
                     <h4><?php _e('Show sidebar', 'spiny'); ?></h4>
                     <?php
-                    $blog_sidebar         = get_option( 'blog_sidebar' );
-                    $blog_sidebar_checked = (int)$blog_sidebar === 1 ? 'checked="checked"' : '';
+                    $spiny_sidebar         = get_option( 'spiny_sidebar' );
+                    $spiny_sidebar_checked = (int)$spiny_sidebar === 1 ? 'checked="checked"' : '';
                     ?>
-                    <input type="checkbox" name="blog_sidebar" id="blog_sidebar" value="1" <?php echo $blog_sidebar_checked;?> />
-                    <label for="blog_sidebar">Show site sidebar</label>
+                    <input type="checkbox" name="spiny_sidebar" id="spiny_sidebar" value="1" <?php echo $spiny_sidebar_checked;?> />
+                    <label for="spiny_sidebar">Показывать сайдбар</label>
                 </td>
                 <td><?php _e('Check for displaying sidebar', 'spiny'); ?></td>
             </tr>

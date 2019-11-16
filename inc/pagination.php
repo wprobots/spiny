@@ -23,7 +23,7 @@ $pagination = get_the_posts_pagination(array(
 
 if( !empty($pagination) ) {
     ?>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="spiny_grid__col6">
         <?php
         echo $pagination;
         ?>
