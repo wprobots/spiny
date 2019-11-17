@@ -241,6 +241,16 @@ header .social_vkontakte {
     display: block;
 }
 
+
+.spiny_grid__fix.sidebar {
+    width: 300px;
+}
+@media screen and (max-width: 859px) {
+    .spiny_grid__fix.sidebar {
+        width: 100%;
+    }
+}
+
 footer {
     padding-top: 20px;
     padding-bottom: 40px;
@@ -429,6 +439,13 @@ footer .social_vkontakte {
     flex-direction: row;
     flex-wrap: wrap;
 }
+.spiny_grid__col {
+    flex: 1;
+    margin: 0 10px;
+}
+.spiny_grid__fix {
+    margin: 0 10px;
+}
 .spiny_grid__col1 {
     width: calc(20% - 20px);
     margin: 0 10px;
@@ -457,7 +474,39 @@ footer .social_vkontakte {
 .spiny_grid.vertical_center {
     align-items: center;
 }
+
+@media screen and (max-width: 1199px) {
+    .spiny_grid__col1 {
+        width: calc(25% - 20px);
+        margin: 0 10px;
+    }
+}
+@media screen and (max-width: 999px) {
+    .spiny_grid__col2,
+    .spiny_grid__col1 {
+        width: calc(33.3333333% - 20px);
+        margin: 0 10px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .spiny_grid__col3,
+    .spiny_grid__col2,
+    .spiny_grid__col1 {
+        width: calc(50% - 20px);
+        margin: 0 10px;
+    }
+}
+@media screen and (max-width: 599px) {
+    .spiny_grid__col4,
+    .spiny_grid__col3,
+    .spiny_grid__col2,
+    .spiny_grid__col1 {
+        width: calc(100% - 20px);
+        margin: 0 10px;
+    }
+}
 /* GRID */
+
 
 
 /* TYPOGRAFY */

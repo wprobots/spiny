@@ -51,7 +51,7 @@ $cols = spiny_columns();
 
                         if( ! empty($author_meta['description'][0]) ) {
                             ?>
-                            <div class="half_width mt10">
+                            <div>
                                 <?php echo wpautop($author_meta['description'][0]); ?>
                             </div>
                             <?php
@@ -89,7 +89,7 @@ $cols = spiny_columns();
                         <?php
                         if( $image ) {
                             ?>
-                            <a href="<?php echo get_permalink($post->ID); ?>" class="fll mr10 dark_hover bdn">
+                            <a href="<?php echo get_permalink($post->ID); ?>">
                                 <?php echo $image; ?>
                             </a>
                             <?php
@@ -97,8 +97,8 @@ $cols = spiny_columns();
                         ?>
 
                         <p><a href="<?php echo get_permalink($pst->ID); ?>"><?php echo get_the_title($post->ID); ?></a></p>
-                        <p class="gray_text"><?php echo get_first_paragraph($pst, 13, true, true); ?></p>
-                        <a href="<?php echo get_permalink($post->ID); ?>" class="blue_link"><?php echo $wrs_cta_read_button_title; ?></a>
+                        <p><?php echo get_first_paragraph($pst, 13, true, true); ?></p>
+                        <a href="<?php echo get_permalink($post->ID); ?>"><?php echo $wrs_cta_read_button_title; ?></a>
                     </div>
                 <?php
                 endwhile;
