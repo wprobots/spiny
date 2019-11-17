@@ -60,6 +60,8 @@ a:active {
 
 .page_header {
     flex-shrink: 0;
+    position: relative;
+    z-index: 2;
 }
 .page_container {
     flex: 1;
@@ -442,6 +444,7 @@ footer .social_vkontakte {
 .spiny_grid__col {
     flex: 1;
     margin: 0 10px;
+    max-width: 100%;
 }
 .spiny_grid__fix {
     margin: 0 10px;
@@ -574,6 +577,9 @@ ul {
 
 
 /* WP FIXES */
+article {
+    max-width: 100%;
+}
 figure {
     max-width: 100% !important;
 }
