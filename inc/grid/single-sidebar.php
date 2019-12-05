@@ -51,7 +51,7 @@ $cols = spiny_columns();
                 }
                 else {
                     ?>
-                    <div class="spiny_grid__col6">
+                    <div class="spiny_grid__col7">
                         Пусто
                     </div>
                     <?php

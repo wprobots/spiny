@@ -107,7 +107,7 @@ function spiny_columns() {
     $col = 2;
     if( $blog_grid && (int)$blog_grid > 0 ) {
         if( (int)$blog_grid === 1 ) {
-            $col = 6;
+            $col = 7;
         }
         if( (int)$blog_grid === 2 ) {
             $col = 4;

@@ -466,10 +466,14 @@ footer .social_vkontakte {
     margin: 0 10px;
 }
 .spiny_grid__col5 {
-    width: calc(75% - 20px);
+    width: calc(66.666666% - 20px);
     margin: 0 10px;
 }
 .spiny_grid__col6 {
+    width: calc(75% - 20px);
+    margin: 0 10px;
+}
+.spiny_grid__col7 {
     width: calc(100% - 20px);
     margin: 0 10px;
 }

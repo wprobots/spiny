@@ -6,7 +6,7 @@ $cols = spiny_columns();
 
     <div class="spiny_grid_container">
         <div class="spiny_grid">
-            <div class="spiny_grid__col6">
+            <div class="spiny_grid__col7">
                 <?php
                 if( have_posts() ) {
                     while ( have_posts() ) :
@@ -51,7 +51,7 @@ $cols = spiny_columns();
                 }
                 else {
                     ?>
-                    <div class="spiny_grid__col6">
+                    <div class="spiny_grid__col7">
                         Пусто
                     </div>
                     <?php

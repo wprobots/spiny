@@ -23,7 +23,7 @@ $pagination = get_the_posts_pagination(array(
 
 if( !empty($pagination) ) {
     ?>
-    <div class="spiny_grid__col6">
+    <div class="spiny_grid__col7">
         <?php
         echo $pagination;
         ?>

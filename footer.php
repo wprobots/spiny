@@ -8,7 +8,7 @@
         <div class="reducer">
             <div class="spiny_grid_container">
                 <div class="spiny_grid vertical_center">
-                    <div class="spiny_grid__col6">
+                    <div class="spiny_grid__col7">
                         <nav class="spiny_footer_nav">
                             <?php
                             wp_nav_menu(array(

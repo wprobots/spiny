@@ -29,7 +29,7 @@ $social_vkontakte = get_option('social_vkontakte');
                     <div class="spiny_grid vertical_center header_cols">
                         <div class="spiny_grid__col2 header_col1">
                             <?php
-                            $logo_img      = get_option( 'logo_image' );
+                            $logo_image    = get_option( 'logo_image' );
                             $logo_image_id = get_option( 'logo_image_id' );
 
                             $logo_text = get_option('blogdescription');

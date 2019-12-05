@@ -9,7 +9,7 @@ $cols = spiny_columns();
             <?php
             if( is_archive() ) {
                 ?>
-                <div class="spiny_grid__col6">
+                <div class="spiny_grid__col7">
                     <?php
                     if( is_category() || is_tag() || is_tax() ) {
                         $current = $wp_query->get_queried_object();
@@ -66,7 +66,7 @@ $cols = spiny_columns();
             <?php
             if( is_search() ) {
                 ?>
-                <div class="spiny_grid__col6">
+                <div class="spiny_grid__col7">
                     <h1><?php printf( 'Результаты поиска по&nbsp;запросу&nbsp;&mdash; "%s"', get_search_query() ); ?></h1>
 
                     <?php
@@ -109,7 +109,7 @@ $cols = spiny_columns();
             }
             else {
                 ?>
-                <div class="spiny_grid__col6">
+                <div class="spiny_grid__col7">
                     Записей нет
                 </div>
                 <?php
