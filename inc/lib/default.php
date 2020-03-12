@@ -1,11 +1,4 @@
 <?php
-/**
- * spiny functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package spiny
- */
 
 if ( ! function_exists( 'spiny_setup' ) ) :
     /**
@@ -111,10 +104,10 @@ function spiny_widgets_init() {
         'name'          => esc_html__( 'Sidebar', 'spiny' ),
         'id'            => 'spiny-sidebar',
         'description'   => esc_html__( 'Add widgets here.', 'spiny' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '</h4>',
     ) );
 }
 add_action( 'widgets_init', 'spiny_widgets_init' );

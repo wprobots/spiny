@@ -10,14 +10,18 @@
 get_header();
 ?>
 
-    <div class="reducer">
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col tac">
-                <h1>Страница не найдена</h1>
-                <p>Перейти на <a href="<?php echo esc_url( home_url( '/' ) ); ?>">главную</a>.</p>
+<div class="reducer">
+    <div class="spiny_grid_container">
+        <div class="spiny_grid">
+            <div class="spiny_grid__col7">
+                <h1><?php echo __( 'Categories:', 'spiny' ); ?></h1>
+                <p><?php
+                    printf( __( 'Перейти на %sглавную%s', 'spiny' ), '<a href="' . esc_url( home_url( '/' ) ) . '">', '</a>' );
+                ?></p>
             </div>
         </div>
     </div>
+</div>
 
 <?php
 get_footer();

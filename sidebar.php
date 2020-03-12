@@ -1,17 +1,14 @@
 <?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package spiny
- */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'spiny-sidebar' ) ) {
 	return;
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'spiny-sidebar' ); ?>
-</aside><!-- #secondary -->
+<div class="column column-33">
+    <aside id="secondary" class="widget-area">
+        <?php dynamic_sidebar( 'spiny-sidebar' ); ?>
+    </aside>
+</div>
+
+

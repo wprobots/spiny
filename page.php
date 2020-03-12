@@ -1,25 +1,7 @@
 <?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package spiny
- */
 
 get_header();
 
-$spiny_sidebar = get_option( 'spiny_sidebar' );
-if( $spiny_sidebar && (int)$spiny_sidebar === 1 ) {
-    get_template_part( 'inc/grid/page', 'sidebar' );
-}
-else {
-    get_template_part( 'inc/grid/page', 'nosidebar' );
-}
+get_template_part( 'inc/grid/page', 'sidebar' );
 
 get_footer();

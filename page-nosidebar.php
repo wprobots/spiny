@@ -1,7 +1,7 @@
 <?php
-/* Template Name: Default page template */
+/* Template Name: Full-width page template */
 get_header();
 
-get_template_part( 'inc/grid/page', 'sidebar' );
+get_template_part( 'inc/grid/page', 'nosidebar' );
 
 get_footer();
